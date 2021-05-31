@@ -1,7 +1,7 @@
 var timerEl = document.querySelector("#countdown");
 var questionBlockEl = document.querySelector("#question-block");
 
-// set time to 120 seconds
+// set time to 90 seconds
 var timeLeft = 90;
 //set totalscore 
 
@@ -18,15 +18,13 @@ function countdown() {
         }
 
         else {
-            // once 'timeLeft' gets to 0, set 'timerEl' to an empty string
-            timerEl.textContent = "";
             //use 'clearInterval()' to stop the timer
             clearInterval(timeInterval);
-            // display name input with high score
         }
     }, 1000);
 }
 
+// create question 1
 var question1 = function () {
     var penalty = function () {
         timeLeft = timeLeft - 5;
@@ -381,7 +379,7 @@ var infoInput = function () {
     info.appendChild(initialBtn);
     initialBtn.addEventListener("click", function (event) {
         var initialName = document.querySelector(".text-input").value
-        localStorage.setItem("Initial", initialName);
+        localStorage.setItem("initial", initialName);
         localStorage.setItem("score", timeLeft);
         info.remove();
         //enter load score page
@@ -391,13 +389,46 @@ var infoInput = function () {
 
 //load high score page
 var scorePage = function () {
+    // create div block
     var loadScore = document.createElement("div")
     loadScore.className = "load";
     questionBlockEl.appendChild(loadScore);
 
+    //create title
+    var scoreTitle = document.createElement("h2");
+    scoreTitle.className = "score-title";
+    scoreTitle.textContent = "High Score";
+    loadScore.appendChild(scoreTitle);
+
+    //create score display section
     var loadBox = document.createElement("h3");
+    var initialName = localStorage.getItem("initial");
+    var timeLeft = localStorage.getItem("score");
     loadBox.className = "load-box";
-    loadBox.textContent
+    loadBox.textContent = initialName + " with score of " + timeLeft;
+    loadScore.appendChild(loadBox);
+
+    //back to home page button
+    var backBtn = document.createElement("button");
+    backBtn.className = "back-button";
+    backBtn.textContent = "Back to Home Page";
+    loadScore.appendChild(backBtn);
+    backBtn.addEventListener("click", function (event) {
+        loadScore.remove();
+        timeLeft = 90;
+        homepage();
+    });
+
+    //clear score button
+    var clearScore = document.createElement("button");
+    clearScore.className = "clear-score";
+    clearScore.textContent = "Clear High Score";
+    loadScore.appendChild(clearScore);
+    clearScore.addEventListener("click", function () {
+        localStorage.removeItem("initial");
+        localStorage.removeItem("score");
+        loadBox.remove();
+    })
 }
 
 var homepage = function () {
@@ -410,30 +441,25 @@ var homepage = function () {
     var subTitle = document.createElement("h1")
     subTitle.className = "page-title";
     subTitle.textContent = "Task Quiz";
-    questionBlockEl.appendChild(subTitle);
+    container.appendChild(subTitle);
 
     //home page quiz description
     var paragraph = document.createElement("p");
     paragraph.className = "home-para";
     paragraph.textContent = "Try to answer the following questions. Incorrect answer penealize your time by 5 seconds.";
-    questionBlockEl.appendChild(paragraph);
+    container.appendChild(paragraph);
 
     var startBtn = document.createElement("button");
     startBtn.className = "start";
     startBtn.textContent = "Ready, Go";
-    questionBlockEl.appendChild(startBtn);
+    container.appendChild(startBtn);
 
     startBtn.addEventListener("click", function (event) {
         container.remove();
-        subTitle.remove();
-        paragraph.remove();
-        startBtn.remove();
         countdown();
         question1();
 
     })
 }
-
-
 
 homepage();
