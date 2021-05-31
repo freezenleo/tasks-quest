@@ -55,7 +55,7 @@ var question1 = function () {
     answer1.className = "answer-one";
     answer1.textContent = "1. Black";
     answerContainer.appendChild(answer1);
-    answer1.addEventListener("click", event => {
+    answer1.addEventListener("click", function (event) {
         penalty();
     })
 
@@ -64,8 +64,9 @@ var question1 = function () {
     answer2.className = "answer-two";
     answer2.textContent = "2. Blue";
     answerContainer.appendChild(answer2);
-    answer2.addEventListener("click", event => {
+    answer2.addEventListener("click", function (event) {
         console.log("Correct");
+        questionEl.remove();
         question2();
     })
 
@@ -74,7 +75,7 @@ var question1 = function () {
     answer3.className = "answer-three";
     answer3.textContent = "3. Green";
     answerContainer.appendChild(answer3);
-    answer3.addEventListener("click", event => {
+    answer3.addEventListener("click", function (event) {
         penalty();
     })
 
@@ -83,7 +84,7 @@ var question1 = function () {
     answer4.className = "answer-four";
     answer4.textContent = "4. Neon Blue";
     answerContainer.appendChild(answer4);
-    answer4.addEventListener("click", event => {
+    answer4.addEventListener("click", function (event) {
         penalty();
     })
 }
@@ -117,7 +118,7 @@ var question2 = function () {
     answer1.className = "answer-one";
     answer1.textContent = "1. className";
     answerContainer.appendChild(answer1);
-    answer1.addEventListener("click", event => {
+    answer1.addEventListener("click", function (event) {
         penalty();
     })
 
@@ -126,8 +127,9 @@ var question2 = function () {
     answer2.className = "answer-two";
     answer2.textContent = "2. createElement";
     answerContainer.appendChild(answer2);
-    answer2.addEventListener("click", event => {
+    answer2.addEventListener("click", function (event) {
         console.log("Correct");
+        questionEl.remove();
         question3();
     })
 
@@ -136,7 +138,7 @@ var question2 = function () {
     answer3.className = "answer-three";
     answer3.textContent = "3. appendChild";
     answerContainer.appendChild(answer3);
-    answer3.addEventListener("click", event => {
+    answer3.addEventListener("click", function (event) {
         penalty();
     })
 
@@ -145,7 +147,7 @@ var question2 = function () {
     answer4.className = "answer-four";
     answer4.textContent = "4. addEventListener";
     answerContainer.appendChild(answer4);
-    answer4.addEventListener("click", event => {
+    answer4.addEventListener("click", function (event) {
         penalty();
     })
 }
@@ -179,7 +181,7 @@ var question3 = function () {
     answer1.className = "answer-one";
     answer1.textContent = "1. className";
     answerContainer.appendChild(answer1);
-    answer1.addEventListener("click", event => {
+    answer1.addEventListener("click", function (event) {
         penalty();
     })
 
@@ -188,8 +190,9 @@ var question3 = function () {
     answer2.className = "answer-two";
     answer2.textContent = "2. createElement";
     answerContainer.appendChild(answer2);
-    answer2.addEventListener("click", event => {
+    answer2.addEventListener("click", function (event) {
         console.log("Correct");
+        questionEl.remove();
         question4();
     })
 
@@ -198,7 +201,7 @@ var question3 = function () {
     answer3.className = "answer-three";
     answer3.textContent = "3. appendChild";
     answerContainer.appendChild(answer3);
-    answer3.addEventListener("click", event => {
+    answer3.addEventListener("click", function (event) {
         penalty();
     })
 
@@ -207,7 +210,7 @@ var question3 = function () {
     answer4.className = "answer-four";
     answer4.textContent = "4. addEventListener";
     answerContainer.appendChild(answer4);
-    answer4.addEventListener("click", event => {
+    answer4.addEventListener("click", function (event) {
         penalty();
     })
 }
@@ -241,7 +244,7 @@ var question4 = function () {
     answer1.className = "answer-one";
     answer1.textContent = "1. className";
     answerContainer.appendChild(answer1);
-    answer1.addEventListener("click", event => {
+    answer1.addEventListener("click", function (event) {
         penalty();
     })
 
@@ -250,8 +253,9 @@ var question4 = function () {
     answer2.className = "answer-two";
     answer2.textContent = "2. createElement";
     answerContainer.appendChild(answer2);
-    answer2.addEventListener("click", event => {
+    answer2.addEventListener("click", function (event) {
         console.log("Correct");
+        questionEl.remove();
         question5();
     })
 
@@ -260,7 +264,7 @@ var question4 = function () {
     answer3.className = "answer-three";
     answer3.textContent = "3. appendChild";
     answerContainer.appendChild(answer3);
-    answer3.addEventListener("click", event => {
+    answer3.addEventListener("click", function (event) {
         penalty();
     })
 
@@ -269,7 +273,7 @@ var question4 = function () {
     answer4.className = "answer-four";
     answer4.textContent = "4. addEventListener";
     answerContainer.appendChild(answer4);
-    answer4.addEventListener("click", event => {
+    answer4.addEventListener("click", function (event) {
         penalty();
     })
 }
@@ -279,7 +283,7 @@ var question5 = function () {
     var penalty = function () {
         timeLeft = timeLeft - 5;
         questionEl.remove();
-
+        infoInput();
     }
 
     //create question container div block
@@ -303,7 +307,7 @@ var question5 = function () {
     answer1.className = "answer-one";
     answer1.textContent = "1. className";
     answerContainer.appendChild(answer1);
-    answer1.addEventListener("click", event => {
+    answer1.addEventListener("click", function (event) {
         penalty();
     })
 
@@ -312,8 +316,10 @@ var question5 = function () {
     answer2.className = "answer-two";
     answer2.textContent = "2. createElement";
     answerContainer.appendChild(answer2);
-    answer2.addEventListener("click", event => {
+    answer2.addEventListener("click", function (event) {
         console.log("Correct");
+        questionEl.remove();
+        infoInput();
 
     })
 
@@ -322,7 +328,7 @@ var question5 = function () {
     answer3.className = "answer-three";
     answer3.textContent = "3. appendChild";
     answerContainer.appendChild(answer3);
-    answer3.addEventListener("click", event => {
+    answer3.addEventListener("click", function (event) {
         penalty();
     })
 
@@ -331,14 +337,67 @@ var question5 = function () {
     answer4.className = "answer-four";
     answer4.textContent = "4. addEventListener";
     answerContainer.appendChild(answer4);
-    answer4.addEventListener("click", event => {
+    answer4.addEventListener("click", function (event) {
         penalty();
     })
 }
 
 // name info input page
 var infoInput = function () {
-    var
+    //create info container div
+    var info = document.createElement("div");
+    info.className = "name-info";
+    questionBlockEl.appendChild(info);
+
+    //create sub title
+    var allDone = document.createElement("h2");
+    allDone.className = "all-done";
+    allDone.textContent = "All Done!";
+    info.appendChild(allDone);
+
+    //create final socre 
+    var finalScore = document.createElement("h3");
+    finalScore.className = "final-score";
+    finalScore.textContent = "Your final score is " + timeLeft;
+    info.appendChild(finalScore);
+
+    //create name input field
+    var initial = document.createElement("h3");
+    initial.className = "initial-info";
+    initial.textContent = "Enter Initial: ";
+    info.appendChild(initial);
+
+    //initial input box
+    var initialBox = document.createElement("input");
+    initialBox.className = "text-input";
+    initialBox.setAttribute("type", "text");
+    initialBox.setAttribute("placeholder", "Enter Your Initial");
+    info.appendChild(initialBox);
+
+    //create submit button
+    var initialBtn = document.createElement("button");
+    initialBtn.className = "initial-button";
+    initialBtn.textContent = "Submit";
+    info.appendChild(initialBtn);
+    initialBtn.addEventListener("click", function (event) {
+        var initialName = document.querySelector(".text-input").value
+        localStorage.setItem("Initial", initialName);
+        localStorage.setItem("score", timeLeft);
+        info.remove();
+        //enter load score page
+        scorePage();
+    })
+}
+
+//load high score page
+var scorePage = function () {
+    var loadScore = document.createElement("div")
+    loadScore.className = "load";
+    questionBlockEl.appendChild(loadScore);
+
+    var loadBox = document.createElement("h3");
+    loadBox.className = "load-box";
+    loadBox.textContent
 }
 
 var homepage = function () {
@@ -364,7 +423,7 @@ var homepage = function () {
     startBtn.textContent = "Ready, Go";
     questionBlockEl.appendChild(startBtn);
 
-    startBtn.addEventListener("click", event => {
+    startBtn.addEventListener("click", function (event) {
         container.remove();
         subTitle.remove();
         paragraph.remove();
