@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ededed;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    padding: 50px;
+}
+
+.home-para {
+    font-size: 40px;
+    text-align: center;
+    padding: 0 0 50px 0;
+}
+
+.home-page {
+    position: relative;
+}
+
+.start {
+    font-size: 30px;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+.start:hover {
+    background-color: #39a6b2;
+}
+
+.question-ans h2 {
+    text-align: center;
+    font-size: 50px;
+}
+
+.answer {
+    font-size: 50px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.answer-one, .answer-two, .answer-three, .answer-four {
+    padding: 10px;
+    margin: 10px;
+    font-size: 50px;
+    background-color: blue;
+    color: white;
+    text-align: left;
+    border-radius: 10px;
+}
+
+.answer-one:hover, .answer-two:hover, .answer-three:hover, .answer-four:hover {
+    background-color: #39a6b2;
+}
+
+.all-done {
+    font-size: 50px;
+    text-align: center;
+    padding: 20px;
+}
+
+.final-score {
+    font-size: 40px;
+    text-align: center;
+    padding: 20px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+}
+
+.initial-info {
+   font-size: 30px;
+}
+
+.text-input {
+   font-size: 30px;
+}
+
+.initial-button {
+   font-size: 30px;
+   border-radius: 10px;
+   background-color: blue;
+   color: white;
+}
+
+.initial-button:hover {
+    background-color: #39a6b2;
+}
+
+.score-title {
+    font-size: 50px;
+    text-align: center;
+    padding: 20px;
+}
+
+.load-box {
+    font-size: 30px;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.back-button, .clear-score {
+   font-size: 30px;
+   border-radius: 10px;
+   background-color: blue;
+   color: white;
+   margin: 10px;
+}
+
+.back-button:hover, .clear-score:hover {
+   background-color: #39a6b2;
+}

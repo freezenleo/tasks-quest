@@ -12,7 +12,7 @@ function countdown() {
 
         if (timeLeft > 0) {
             // set the 'textContent' of 'timerEl' to show the remaining time
-            timerEl.textContent = 'Time Remaining: ' + timeLeft;
+            timerEl.textContent = "Time " + timeLeft;
             // decrement 'timeLeft' by 1
             timeLeft--;
         }
@@ -359,24 +359,29 @@ var infoInput = function () {
     finalScore.textContent = "Your final score is " + timeLeft;
     info.appendChild(finalScore);
 
+    //create initial input div
+    var inputContainer = document.createElement("div");
+    inputContainer.className = "input-container";
+    info.appendChild(inputContainer);
+
     //create name input field
     var initial = document.createElement("h3");
     initial.className = "initial-info";
     initial.textContent = "Enter Initial: ";
-    info.appendChild(initial);
+    inputContainer.appendChild(initial);
 
     //initial input box
     var initialBox = document.createElement("input");
     initialBox.className = "text-input";
     initialBox.setAttribute("type", "text");
     initialBox.setAttribute("placeholder", "Enter Your Initial");
-    info.appendChild(initialBox);
+    inputContainer.appendChild(initialBox);
 
     //create submit button
     var initialBtn = document.createElement("button");
     initialBtn.className = "initial-button";
     initialBtn.textContent = "Submit";
-    info.appendChild(initialBtn);
+    inputContainer.appendChild(initialBtn);
     initialBtn.addEventListener("click", function (event) {
         var initialName = document.querySelector(".text-input").value
         localStorage.setItem("initial", initialName);
@@ -408,11 +413,16 @@ var scorePage = function () {
     loadBox.textContent = initialName + " with score of " + timeLeft;
     loadScore.appendChild(loadBox);
 
+    //create button container div
+    var buttonContainer = document.createElement("div")
+    buttonContainer.className = "button-container";
+    loadScore.appendChild(buttonContainer);
+
     //back to home page button
     var backBtn = document.createElement("button");
     backBtn.className = "back-button";
     backBtn.textContent = "Back to Home Page";
-    loadScore.appendChild(backBtn);
+    buttonContainer.appendChild(backBtn);
     backBtn.addEventListener("click", function (event) {
         loadScore.remove();
         timeLeft = 90;
@@ -423,7 +433,7 @@ var scorePage = function () {
     var clearScore = document.createElement("button");
     clearScore.className = "clear-score";
     clearScore.textContent = "Clear High Score";
-    loadScore.appendChild(clearScore);
+    buttonContainer.appendChild(clearScore);
     clearScore.addEventListener("click", function () {
         localStorage.removeItem("initial");
         localStorage.removeItem("score");
