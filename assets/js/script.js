@@ -1,27 +1,28 @@
 var timerEl = document.querySelector("#countdown");
 var questionBlockEl = document.querySelector("#question-block");
-
+var timeInterval;
 // set time to 90 seconds
 var timeLeft = 90;
-//set totalscore 
+
 
 function countdown() {
     //use the 'setInterval()' method to call a function to be executed
-    var timeInterval = setInterval(function () {
-        // countdown as 'timeLeft' is greater than 1
+    // var timeInterval = setInterval(function () {
+    // countdown as 'timeLeft' is greater than 1
 
-        if (timeLeft > 0) {
-            // set the 'textContent' of 'timerEl' to show the remaining time
-            timerEl.textContent = "Time " + timeLeft;
-            // decrement 'timeLeft' by 1
-            timeLeft--;
-        }
+    if (timeLeft > 0) {
+        // set the 'textContent' of 'timerEl' to show the remaining time
+        timerEl.textContent = "Time " + timeLeft;
+        // decrement 'timeLeft' by 1
+        timeLeft--;
+    }
 
-        else {
-            //use 'clearInterval()' to stop the timer
-            clearInterval(timeInterval);
-        }
-    }, 1000);
+    // else {
+    //     timerEl.textContent = timeLeft;
+    //     // //use 'clearInterval()' to stop the timer
+    //     clearInterval(timeInterval);
+    // }
+    // }, 1000);
 }
 
 // create question 1
@@ -318,7 +319,6 @@ var question5 = function () {
         console.log("Correct");
         questionEl.remove();
         infoInput();
-
     })
 
     // create answer 3
@@ -342,6 +342,8 @@ var question5 = function () {
 
 // name info input page
 var infoInput = function () {
+    clearInterval(timeInterval);
+
     //create info container div
     var info = document.createElement("div");
     info.className = "name-info";
@@ -425,7 +427,6 @@ var scorePage = function () {
     buttonContainer.appendChild(backBtn);
     backBtn.addEventListener("click", function (event) {
         loadScore.remove();
-        timeLeft = 90;
         homepage();
     });
 
@@ -466,9 +467,10 @@ var homepage = function () {
 
     startBtn.addEventListener("click", function (event) {
         container.remove();
-        countdown();
+        timeInterval = setInterval(countdown, 1000);
         question1();
-
+        timeLeft = 90;
+        console.log("startBtn timeLeft" + timeLeft);
     })
 }
 
