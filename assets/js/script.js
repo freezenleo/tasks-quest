@@ -1,34 +1,25 @@
 var timerEl = document.querySelector("#countdown");
 var questionBlockEl = document.querySelector("#question-block");
+
 var timeInterval;
 // set time to 90 seconds
 var timeLeft = 90;
 
 
 function countdown() {
-    //use the 'setInterval()' method to call a function to be executed
-    // var timeInterval = setInterval(function () {
-    // countdown as 'timeLeft' is greater than 1
-
     if (timeLeft > 0) {
         // set the 'textContent' of 'timerEl' to show the remaining time
         timerEl.textContent = "Time " + timeLeft;
         // decrement 'timeLeft' by 1
         timeLeft--;
     }
-
-    // else {
-    //     timerEl.textContent = timeLeft;
-    //     // //use 'clearInterval()' to stop the timer
-    //     clearInterval(timeInterval);
-    // }
-    // }, 1000);
 }
 
 // create question 1
 var question1 = function () {
     var penalty = function () {
         timeLeft = timeLeft - 5;
+        alert("Incorrect");
         questionEl.remove();
         question2();
     }
@@ -41,7 +32,7 @@ var question1 = function () {
     //create question 
     var question1 = document.createElement("h2");
     question1.className = "question-para";
-    question1.textContent = "What is the sky color?"
+    question1.textContent = "Commonly used data types DO NOT include:"
     questionEl.appendChild(question1);
 
     // create answer container
@@ -52,7 +43,7 @@ var question1 = function () {
     //create answer 1
     var answer1 = document.createElement("button");
     answer1.className = "answer-one";
-    answer1.textContent = "1. Black";
+    answer1.textContent = "1. string";
     answerContainer.appendChild(answer1);
     answer1.addEventListener("click", function (event) {
         penalty();
@@ -61,10 +52,10 @@ var question1 = function () {
     // create answer 2
     var answer2 = document.createElement("button");
     answer2.className = "answer-two";
-    answer2.textContent = "2. Blue";
+    answer2.textContent = "2. alerts";
     answerContainer.appendChild(answer2);
     answer2.addEventListener("click", function (event) {
-        console.log("Correct");
+        alert("Correct");
         questionEl.remove();
         question2();
     })
@@ -72,7 +63,7 @@ var question1 = function () {
     // create answer 3
     var answer3 = document.createElement("button");
     answer3.className = "answer-three";
-    answer3.textContent = "3. Green";
+    answer3.textContent = "3. booleans";
     answerContainer.appendChild(answer3);
     answer3.addEventListener("click", function (event) {
         penalty();
@@ -81,7 +72,7 @@ var question1 = function () {
     //create answer 4
     var answer4 = document.createElement("button");
     answer4.className = "answer-four";
-    answer4.textContent = "4. Neon Blue";
+    answer4.textContent = "4. numbers";
     answerContainer.appendChild(answer4);
     answer4.addEventListener("click", function (event) {
         penalty();
@@ -92,6 +83,7 @@ var question1 = function () {
 var question2 = function () {
     var penalty = function () {
         timeLeft = timeLeft - 5;
+        alert("Incorrect");
         questionEl.remove();
         question3();
     }
@@ -127,7 +119,7 @@ var question2 = function () {
     answer2.textContent = "2. createElement";
     answerContainer.appendChild(answer2);
     answer2.addEventListener("click", function (event) {
-        console.log("Correct");
+        alert("Correct");
         questionEl.remove();
         question3();
     })
@@ -155,6 +147,7 @@ var question2 = function () {
 var question3 = function () {
     var penalty = function () {
         timeLeft = timeLeft - 5;
+        alert("Incorrect");
         questionEl.remove();
         question4();
     }
@@ -167,7 +160,7 @@ var question3 = function () {
     //create question 
     var question1 = document.createElement("h2");
     question1.className = "question-para";
-    question1.textContent = "How do we add element to html using javascript?"
+    question1.textContent = "The condition in an if/else statement is enclosed within ___."
     questionEl.appendChild(question1);
 
     // create answer container
@@ -178,7 +171,7 @@ var question3 = function () {
     //create answer 1
     var answer1 = document.createElement("button");
     answer1.className = "answer-one";
-    answer1.textContent = "1. className";
+    answer1.textContent = "1. quotes";
     answerContainer.appendChild(answer1);
     answer1.addEventListener("click", function (event) {
         penalty();
@@ -187,10 +180,10 @@ var question3 = function () {
     // create answer 2
     var answer2 = document.createElement("button");
     answer2.className = "answer-two";
-    answer2.textContent = "2. createElement";
+    answer2.textContent = "2. parentheses";
     answerContainer.appendChild(answer2);
     answer2.addEventListener("click", function (event) {
-        console.log("Correct");
+        alert("Correct");
         questionEl.remove();
         question4();
     })
@@ -198,7 +191,7 @@ var question3 = function () {
     // create answer 3
     var answer3 = document.createElement("button");
     answer3.className = "answer-three";
-    answer3.textContent = "3. appendChild";
+    answer3.textContent = "3. curly brackets";
     answerContainer.appendChild(answer3);
     answer3.addEventListener("click", function (event) {
         penalty();
@@ -207,7 +200,7 @@ var question3 = function () {
     //create answer 4
     var answer4 = document.createElement("button");
     answer4.className = "answer-four";
-    answer4.textContent = "4. addEventListener";
+    answer4.textContent = "4. square brackets";
     answerContainer.appendChild(answer4);
     answer4.addEventListener("click", function (event) {
         penalty();
@@ -218,6 +211,7 @@ var question3 = function () {
 var question4 = function () {
     var penalty = function () {
         timeLeft = timeLeft - 5;
+        alert("Incorrect");
         questionEl.remove();
         question5();
     }
@@ -230,7 +224,7 @@ var question4 = function () {
     //create question 
     var question1 = document.createElement("h2");
     question1.className = "question-para";
-    question1.textContent = "How do we add element to html using javascript?"
+    question1.textContent = "Arrays in JavaScript can be used to store ____."
     questionEl.appendChild(question1);
 
     // create answer container
@@ -241,7 +235,7 @@ var question4 = function () {
     //create answer 1
     var answer1 = document.createElement("button");
     answer1.className = "answer-one";
-    answer1.textContent = "1. className";
+    answer1.textContent = "1. numbers and strings";
     answerContainer.appendChild(answer1);
     answer1.addEventListener("click", function (event) {
         penalty();
@@ -250,18 +244,16 @@ var question4 = function () {
     // create answer 2
     var answer2 = document.createElement("button");
     answer2.className = "answer-two";
-    answer2.textContent = "2. createElement";
+    answer2.textContent = "2. other arrays";
     answerContainer.appendChild(answer2);
     answer2.addEventListener("click", function (event) {
-        console.log("Correct");
-        questionEl.remove();
-        question5();
+        penalty();
     })
 
     // create answer 3
     var answer3 = document.createElement("button");
     answer3.className = "answer-three";
-    answer3.textContent = "3. appendChild";
+    answer3.textContent = "3. booleans";
     answerContainer.appendChild(answer3);
     answer3.addEventListener("click", function (event) {
         penalty();
@@ -270,10 +262,12 @@ var question4 = function () {
     //create answer 4
     var answer4 = document.createElement("button");
     answer4.className = "answer-four";
-    answer4.textContent = "4. addEventListener";
+    answer4.textContent = "4. all of the above";
     answerContainer.appendChild(answer4);
     answer4.addEventListener("click", function (event) {
-        penalty();
+        alert("Correct");
+        questionEl.remove();
+        question5();
     })
 }
 
@@ -281,6 +275,7 @@ var question4 = function () {
 var question5 = function () {
     var penalty = function () {
         timeLeft = timeLeft - 5;
+        alert("Incorrect");
         questionEl.remove();
         infoInput();
     }
@@ -293,7 +288,7 @@ var question5 = function () {
     //create question 
     var question1 = document.createElement("h2");
     question1.className = "question-para";
-    question1.textContent = "How do we add element to html using javascript?"
+    question1.textContent = "String values must be enclosed within ___ when being asigned to variables."
     questionEl.appendChild(question1);
 
     // create answer container
@@ -304,7 +299,7 @@ var question5 = function () {
     //create answer 1
     var answer1 = document.createElement("button");
     answer1.className = "answer-one";
-    answer1.textContent = "1. className";
+    answer1.textContent = "1. commas";
     answerContainer.appendChild(answer1);
     answer1.addEventListener("click", function (event) {
         penalty();
@@ -313,10 +308,10 @@ var question5 = function () {
     // create answer 2
     var answer2 = document.createElement("button");
     answer2.className = "answer-two";
-    answer2.textContent = "2. createElement";
+    answer2.textContent = "2. quotes";
     answerContainer.appendChild(answer2);
     answer2.addEventListener("click", function (event) {
-        console.log("Correct");
+        alert("Correct");
         questionEl.remove();
         infoInput();
     })
@@ -324,7 +319,7 @@ var question5 = function () {
     // create answer 3
     var answer3 = document.createElement("button");
     answer3.className = "answer-three";
-    answer3.textContent = "3. appendChild";
+    answer3.textContent = "3. curly brackets";
     answerContainer.appendChild(answer3);
     answer3.addEventListener("click", function (event) {
         penalty();
@@ -333,7 +328,7 @@ var question5 = function () {
     //create answer 4
     var answer4 = document.createElement("button");
     answer4.className = "answer-four";
-    answer4.textContent = "4. addEventListener";
+    answer4.textContent = "4. parentheses";
     answerContainer.appendChild(answer4);
     answer4.addEventListener("click", function (event) {
         penalty();
@@ -470,8 +465,7 @@ var homepage = function () {
         timeInterval = setInterval(countdown, 1000);
         question1();
         timeLeft = 90;
-        console.log("startBtn timeLeft" + timeLeft);
-    })
+    });
 }
 
 homepage();
